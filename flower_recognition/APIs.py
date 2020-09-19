@@ -45,7 +45,10 @@ class ModelPredict(APIView):
             raise ParseError("Empty content")
         f = request.data['file']
 
-        return JsonResponse({'flower_id': -1})
+        print(f)
+        print(type(f))
+
+        return JsonResponse({'flower_id': 1})
 
 
 router = routers.DefaultRouter()
