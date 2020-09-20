@@ -12,7 +12,7 @@ class Flower(models.Model):
 
 
 class FlowerPhoto(models.Model):
-    flower = models.ForeignKey(Flower, on_delete=models.CASCADE)
+    flower = models.ForeignKey(Flower, on_delete=models.CASCADE, null=True)
     img = models.ImageField(upload_to='flowers/')
 
     def __str__(self):
