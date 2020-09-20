@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.exceptions import ParseError
 from django.http import JsonResponse
 from PIL import Image
+from flower_recognition.models import *
 
 
 class FlowerSerializer(serializers.HyperlinkedModelSerializer):
@@ -45,8 +46,9 @@ class ModelPredict(APIView):
             raise ParseError("Empty content")
         f = request.data['file']
 
-        print(f)
-        print(type(f))
+        flower = FlowerPhoto()
+        flower.img = f
+        flower.save()
 
         return JsonResponse({'flower_id': 1})
 
