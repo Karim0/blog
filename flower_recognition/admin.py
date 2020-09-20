@@ -15,5 +15,6 @@ class FlowerAdminModel(admin.ModelAdmin):
     model = Flower
     inlines = [FlowerPhotoInline]
 
+
 # admin.site.register(Flower)
-# admin.site.register(FlowerPhoto)
+admin.site.register(FlowerPhoto)
